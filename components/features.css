@@ -1,0 +1,133 @@
+.features-menu, .retargeting-section {
+  --feature-ink: #202020;
+  --feature-muted: #6c6c73;
+  --feature-surface: #fff;
+  --feature-soft: #f8f8fa;
+  --feature-line: #eaedf1;
+  --feature-accent: var(--color-brand);
+  --feature-tint: var(--brand-tint);
+  color: var(--feature-ink);
+}
+.dark :is(.features-menu, .retargeting-section) {
+  --feature-ink: #f1f1f3;
+  --feature-muted: #a4a4af;
+  --feature-surface: #131315;
+  --feature-soft: #19191c;
+  --feature-line: #2b2b31;
+  --feature-accent: var(--color-brand);
+  --feature-tint: var(--brand-tint);
+}
+:is(#platform, #anonymous-traffic, #retargeting-sync) { scroll-margin-top: 88px; }
+.features-menu { position: relative; }
+.features-trigger { display: flex; align-items: center; gap: 7px; padding: 10px 0; color: var(--feature-muted); font-weight: 500; cursor: pointer; }
+.features-trigger:hover, .features-trigger[aria-expanded="true"] { color: var(--feature-ink); }
+.features-chevron { display: inline-block; transform: translateY(-3px); transition: transform .15s; }
+.features-trigger[aria-expanded="true"] .features-chevron { transform: rotate(180deg); }
+.features-dropdown { position: absolute; z-index: 60; top: calc(100% + 12px); left: -24px; width: 470px; padding: 10px; border: 1px solid var(--feature-line); border-radius: 16px; background: var(--feature-surface); box-shadow: 0 18px 50px #00000012; }
+.features-menu:not(.features-menu-mobile) .features-dropdown::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.features-menu-caption { margin: 9px 12px 12px; font-size: 12px; color: var(--feature-muted); }
+.feature-menu-link { display: grid; grid-template-columns: 28px 1fr 16px; gap: 12px; padding: 15px 12px; border-radius: 8px; }
+.feature-menu-link:hover { background: var(--feature-soft); }
+.feature-number { color: var(--feature-accent); font: 12px var(--font-mono), monospace; padding-top: 4px; }
+.feature-menu-link strong { display: block; font-size: 14px; font-weight: 550; line-height: 1.5; }
+.feature-menu-description { display: block; margin-top: 4px; color: var(--feature-muted); font-size: 12px; line-height: 1.6; }
+.feature-menu-arrow { color: var(--feature-muted); }
+.feature-development { display: inline-block; margin-top: 8px; padding: 3px 7px; border: 1px solid var(--divide); border-radius: 4px; color: var(--feature-muted, #777); font-size: 10px; font-weight: 500; line-height: 1.5; }
+:is(.features-menu, .retargeting-section) :is(a, button, input):focus-visible { outline: 2px solid var(--feature-accent); outline-offset: 4px; border-radius: 4px; }
+.features-menu-mobile .features-trigger { width: 100%; justify-content: space-between; padding: 20px 16px; font-size: 20px; font-weight: 400; }
+.features-menu-mobile .features-dropdown { position: static; width: auto; margin: 0 12px 16px; box-shadow: none; }
+.features-menu-mobile .feature-menu-link { padding: 12px 6px; grid-template-columns: 22px 1fr; gap: 8px; }
+.features-menu-mobile .feature-menu-arrow { display: none; }
+.retargeting-section { padding: 80px 48px 48px; }
+.retargeting-header { max-width: 760px; margin: 0 auto 48px; text-align: center; }
+.feature-section-label { color: var(--feature-accent); font: 11px/1.7 var(--font-mono), monospace; letter-spacing: .035em; text-transform: uppercase; }
+.retargeting-header .feature-development { margin-top: 12px; }
+.retargeting-header h2 { margin: 24px 0 20px; font-weight: 500; font-size: clamp(28px, 3.4vw, 43px); letter-spacing: -.05em; line-height: 1.15; }
+.retargeting-header h2 span { color: var(--feature-muted); }
+.retargeting-header > p:last-child { max-width: 630px; margin: auto; font-size: 15px; line-height: 1.8; color: var(--feature-muted); }
+.retargeting-demo { border: 1px solid var(--feature-line); border-radius: 14px; overflow: hidden; }
+.retargeting-demo-heading { display: flex; justify-content: space-between; gap: 16px; padding: 18px 24px; background: var(--feature-surface); border-bottom: 1px solid var(--feature-line); font-size: 13px; }
+.retargeting-demo-heading > span:last-child { color: var(--feature-muted); font-size: 11px; }
+.retargeting-demo-layout { display: grid; grid-template-columns: .82fr 1.3fr; }
+.retargeting-stage-list { padding: 36px 24px; border-right: 1px solid var(--feature-line); }
+.retargeting-stage-list > p { color: var(--feature-muted); font-size: 12px; margin-bottom: 22px; }
+.retargeting-stage-list button { display: flex; width: 100%; align-items: center; text-align: left; gap: 14px; padding: 20px 12px; margin: 4px 0; border: 1px solid transparent; border-radius: 9px; cursor: pointer; }
+.retargeting-stage-list button:hover { background: var(--feature-soft); }
+.retargeting-stage-list button[aria-pressed="true"] { border-color: var(--feature-accent); background: var(--feature-tint); }
+.retargeting-stage-number { color: var(--feature-muted); font: 11px var(--font-mono), monospace; }
+.retargeting-stage-list strong { font-size: 14px; font-weight: 500; }
+.retargeting-stage-list small { display: block; margin-top: 5px; color: var(--feature-muted); font-size: 12px; }
+.retargeting-stage-arrow { margin-left: auto; color: var(--feature-accent); opacity: 0; }
+.retargeting-stage-list button[aria-pressed="true"] .retargeting-stage-arrow { opacity: 1; }
+.retargeting-canvas { padding: 32px; background-color: var(--feature-soft); background-image: radial-gradient(var(--feature-line) .8px, transparent .8px); background-size: 12px 12px; }
+.retargeting-system, .retargeting-rule, .retargeting-audience { background: var(--feature-surface); border: 1px solid var(--feature-line); border-radius: 10px; box-shadow: 0 2px 3px #00000005; }
+.retargeting-system { display: flex; align-items: center; gap: 12px; padding: 18px; }
+.retargeting-system-logo { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--feature-line); border-radius: 8px; }
+.retargeting-system strong, .retargeting-rule strong { display: block; font-size: 13px; font-weight: 550; }
+.retargeting-system small, .retargeting-audience small { display: block; color: var(--feature-muted); font-size: 11px; margin-top: 4px; }
+.retargeting-system-tag { font-size: 10px; margin-left: auto; text-align: right; max-width: 100px; color: var(--feature-muted); }
+.retargeting-connector { height: 32px; display: grid; place-items: center; color: var(--feature-accent); font-size: 16px; }
+.retargeting-rule { display: flex; align-items: center; gap: 12px; padding: 16px 18px; max-width: 320px; margin: auto; border-color: var(--feature-accent); }
+.retargeting-rule-icon { font-size: 25px; color: var(--feature-accent); }
+.retargeting-rule div > span { display: block; margin-top: 4px; color: var(--feature-muted); font-size: 11px; }
+.retargeting-action { margin-left: auto; font-size: 11px; color: var(--feature-accent); background: var(--feature-tint); padding: 3px 8px; border-radius: 4px; }
+.retargeting-audience-heading { padding: 18px; display: flex; align-items: start; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--feature-line); }
+.retargeting-audience-heading strong { font-size: 13px; font-weight: 500; }
+.retargeting-audience-state { font-size: 10px; line-height: 1.5; color: var(--feature-accent); text-align: right; max-width: 100px; }
+.retargeting-lead { display: flex; align-items: center; gap: 12px; padding: 18px; font-size: 12px; }
+.retargeting-avatar { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: var(--feature-accent); background: var(--feature-tint); }
+.retargeting-lead > span:last-child { margin-left: auto; color: var(--feature-accent); }
+.retargeting-canvas > :is(.retargeting-system, .retargeting-rule, .retargeting-audience) { animation: retargeting-arrive .32s ease-out both; }
+.retargeting-canvas > .retargeting-rule { animation-delay: .08s; }
+.retargeting-canvas > .retargeting-audience { animation-delay: .16s; }
+.retargeting-stage-list button { transition: background-color .2s, border-color .2s; }
+.retargeting-connector span { animation: retargeting-transfer .6s ease-out both; }
+.features-dropdown { animation: retargeting-arrive .16s ease-out; }
+@keyframes retargeting-arrive { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes retargeting-transfer { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .retargeting-canvas > :is(.retargeting-system, .retargeting-rule, .retargeting-audience), .retargeting-connector span, .features-dropdown { animation: none; }
+  .retargeting-stage-list button, .features-chevron { transition: none; }
+}
+.removed .retargeting-lead { opacity: .6; }
+.retargeting-explanation { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 40px; border-top: 1px solid var(--feature-line); padding: 26px 28px; min-height: 175px; }
+.retargeting-explanation h3 { font-size: 15px; font-weight: 500; margin-bottom: 7px; }
+.retargeting-explanation p { color: var(--feature-muted); font-size: 12px; line-height: 1.8; }
+.retargeting-example-note { padding-left: 24px; border-left: 2px solid var(--feature-line); }
+.retargeting-window label { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; }
+.retargeting-window strong { color: var(--feature-accent); font-weight: 500; white-space: nowrap; }
+.retargeting-window input { width: 100%; display: block; margin: 16px 0 9px; accent-color: var(--feature-accent); cursor: pointer; }
+.retargeting-window > span { color: var(--feature-muted); font-size: 11px; }
+.retargeting-ownership { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 40px 0; }
+.retargeting-ownership h3 { font-size: 24px; font-weight: 500; letter-spacing: -.035em; margin: 10px 0; }
+.retargeting-ownership p { max-width: 440px; font-size: 14px; color: var(--feature-muted); line-height: 1.8; }
+.retargeting-cta { display: flex; justify-content: space-between; gap: 24px; align-items: center; padding-top: 28px; border-top: 1px solid var(--feature-line); }
+.retargeting-cta p { font-size: 14px; color: var(--feature-muted); }
+@media (max-width: 900px) {
+  .retargeting-section { padding-left: 24px; padding-right: 24px; }
+  .retargeting-demo-layout { grid-template-columns: 1fr 1.3fr; }
+  .retargeting-stage-list { padding: 24px 12px; }
+  .retargeting-stage-list button { gap: 8px; }
+  .retargeting-canvas { padding: 24px 16px; }
+}
+@media (max-width: 640px) {
+  .retargeting-section { padding: 56px 16px 32px; }
+  .retargeting-header { margin-bottom: 30px; }
+  .retargeting-header h2 { font-size: 30px; }
+  .retargeting-header > p:last-child { font-size: 14px; }
+  .retargeting-demo-heading { flex-direction: column; gap: 4px; padding: 16px; }
+  .retargeting-demo-layout { grid-template-columns: 1fr; }
+  .retargeting-stage-list { padding: 20px 12px; border-right: 0; border-bottom: 1px solid var(--feature-line); }
+  .retargeting-stage-list > p { margin: 0 8px 12px; }
+  .retargeting-stage-list button { padding: 12px; gap: 12px; }
+  .retargeting-canvas { padding: 24px 12px; }
+  .retargeting-system, .retargeting-audience-heading, .retargeting-lead { padding: 14px 12px; gap: 8px; }
+  .retargeting-system-tag { max-width: 75px; }
+  .retargeting-system strong, .retargeting-audience-heading strong { font-size: 12px; }
+  .retargeting-audience-state { max-width: 75px; }
+  .retargeting-audience small, .retargeting-system small { font-size: 10px; }
+  .retargeting-explanation { grid-template-columns: 1fr; gap: 20px; padding: 24px 16px; }
+  .retargeting-example-note { padding-left: 14px; }
+  .retargeting-ownership { grid-template-columns: 1fr; gap: 28px; padding: 32px 4px; }
+  .retargeting-cta { align-items: flex-start; flex-direction: column; gap: 20px; }
+}

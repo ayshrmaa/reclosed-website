@@ -1,0 +1,123 @@
+/* Familiar channel chrome stays separate from the site's navy platform UI. */
+.native-chat, .native-mail {
+  --native-surface: #fff;
+  --native-header: #f7f7f8;
+  --native-muted: #737378;
+  --native-line: #e7e7eb;
+  --native-incoming: #e9e9eb;
+  color: #171719;
+  background: var(--native-surface);
+  border: 1px solid var(--native-line);
+  border-radius: 17px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px -12px rgb(0 0 0 / .2);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.dark .native-chat, .dark .native-mail { --native-surface: #111113; --native-header: #1c1c1e; --native-muted: #a1a1a8; --native-line: #303034; --native-incoming: #303033; color: #f5f5f7; }
+.native-apple { --native-send: #007aff; }
+.native-sms { --native-send: #248c3d; }
+.dark .native-sms { --native-send: #278c3e; }
+.native-avatar { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%; background: #e2e3e7; color: #63656c; font-size: 14px; font-weight: 500; }
+.dark .native-avatar { background: #343438; color: #e0e0e6; }
+.native-avatar-brand { color: var(--primary); background: var(--native-header); border: 1px solid var(--native-line); }
+.native-apple-header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 13px 14px 11px; border-bottom: 1px solid var(--native-line); background: var(--native-header); }
+.native-back { display: inline-flex; align-items: center; gap: 2px; color: #007aff; font-size: 11px; }
+.dark .native-back, .dark .native-header-action { color: #64a8ff; }
+.native-back svg { width: 16px; }
+.native-contact { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.native-contact strong { font-size: 11px; font-weight: 500; }
+.native-contact strong span { color: var(--native-muted); padding-left: 3px; }
+.native-header-action { color: #007aff; justify-self: end; }
+.native-header-action svg { width: 21px; }
+.native-message-body { display: flex; flex-direction: column; align-items: flex-start; padding: 20px 18px 24px; min-height: 270px; }
+.native-date { width: 100%; text-align: center; color: var(--native-muted); font-size: 10px; line-height: 1.65; margin-bottom: 24px; }
+.native-date span { font-weight: 500; }
+.native-bubble { position: relative; max-width: 88%; padding: 11px 15px; border-radius: 17px; font-size: 13px; line-height: 1.55; }
+.native-outgoing { align-self: flex-end; color: white; background: var(--native-send); border-bottom-right-radius: 5px; }
+.native-incoming { color: inherit; background: var(--native-incoming); border-bottom-left-radius: 5px; margin-top: 20px; }
+.native-delivery { align-self: flex-end; margin-top: 5px; margin-right: 4px; font-size: 10px; color: var(--native-muted); }
+.native-composer { display: flex; gap: 10px; align-items: center; padding: 12px 14px 15px; }
+.native-plus { font-size: 28px; font-weight: 300; line-height: 1; color: var(--native-muted); }
+.native-composer > div { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--native-line); padding: 8px 12px; border-radius: 20px; color: var(--native-muted); font-size: 12px; }
+.native-composer svg { width: 15px; height: 17px; }
+.native-whatsapp { --native-send: #d9fdd3; --native-incoming: #fff; --wa-text: #111b21; background: #efeae2; color: var(--wa-text); }
+.dark .native-whatsapp { --native-send: #005c4b; --native-incoming: #202c33; --wa-text: #e9edef; background: #0b141a; }
+.native-wa-header { display: flex; align-items: center; gap: 9px; padding: 15px 12px; color: #fff; background: #075e54; }
+.dark .native-wa-header { background: #202c33; }
+.native-wa-header > svg { width: 18px; flex-shrink: 0; }
+.native-wa-header .native-avatar { background: #d9e5e0; color: #546d63; }
+.native-wa-header > div { min-width: 0; }
+.native-wa-header strong, .native-wa-header > div > span { display: block; }
+.native-wa-header strong { font-size: 13px; font-weight: 500; }
+.native-wa-header > div > span { font-size: 10px; color: #d5e7e2; }
+.native-wa-actions { display: flex; align-items: center; gap: 13px; margin-left: auto; }
+.native-wa-actions svg { width: 18px; }
+.native-wa-actions > span { font-size: 23px; line-height: 1; }
+.native-whatsapp .native-message-body { min-height: 290px; background-image: radial-gradient(#8b9c8524 .8px, transparent .8px); background-size: 18px 18px; }
+.native-wa-day { align-self: center; padding: 4px 9px; margin-bottom: 23px; font-size: 9px; color: #54656f; background: #fff; border-radius: 6px; box-shadow: 0 1px 2px #00000012; }
+.dark .native-wa-day { color: #aebac1; background: #18252d; }
+.native-whatsapp .native-bubble { color: var(--wa-text); border-radius: 8px; box-shadow: 0 1px 1px #00000014; padding: 10px 12px 6px; }
+.native-whatsapp .native-outgoing { border-top-right-radius: 0; }
+.native-whatsapp .native-incoming { border-top-left-radius: 0; margin-top: 18px; }
+.native-wa-time { display: flex; align-items: center; justify-content: flex-end; gap: 4px; margin-top: 4px; color: #667781; font-size: 9px; }
+.dark .native-wa-time { color: #b3c4c9; }
+.native-wa-checks { color: #087d9b; font-size: 12px; letter-spacing: -5px; padding-right: 5px; }
+.dark .native-wa-checks { color: #53bdeb; }
+.native-wa-composer { display: flex; align-items: center; gap: 7px; padding: 9px; }
+.native-wa-composer > div { display: flex; align-items: center; gap: 10px; flex: 1; border-radius: 22px; background: #fff; color: #667781; padding: 10px 12px; font-size: 12px; }
+.dark .native-wa-composer > div { color: #aebac1; background: #202c33; }
+.native-smile { font-size: 22px; line-height: 1; }
+.native-wa-camera { margin-left: auto; display: flex; }
+.native-wa-camera svg { width: 18px; height: 18px; }
+.native-wa-mic { display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #008069; color: #fff; width: 38px; height: 38px; }
+.native-wa-mic svg { width: 17px; height: 17px; }
+.native-mail { border-radius: 12px; }
+.native-mail-toolbar { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-bottom: 1px solid var(--native-line); background: var(--native-header); }
+.native-mail-toolbar > span:first-child { display: flex; align-items: center; gap: 7px; color: #3478da; font-size: 12px; font-weight: 600; }
+.dark .native-mail-toolbar > span:first-child { color: #80b3ff; }
+.native-mail-toolbar svg { width: 18px; height: 18px; }
+.native-mail-inbox { margin-left: auto; color: var(--native-muted); font-size: 11px; }
+.native-mail-toolbar > span:last-child { color: var(--native-muted); letter-spacing: 2px; }
+.native-mail-content { padding: 20px; }
+.native-mail-subject { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 500; letter-spacing: -.02em; margin-bottom: 21px; }
+.native-mail-subject > span { font-size: 10px; padding: 1px 5px; border-radius: 4px; border: 1px solid var(--native-line); color: var(--native-muted); }
+.native-mail-sender { display: flex; align-items: center; gap: 8px; }
+.native-mail-sender strong { font-size: 11px; font-weight: 600; display: block; }
+.native-mail-sender small { font-size: 10px; color: var(--native-muted); display: block; margin-top: 2px; }
+.native-mail-sender time { margin-left: auto; color: var(--native-muted); font-size: 9px; }
+.native-mail-copy { margin: 18px 0 0 42px; font-size: 12px; line-height: 1.7; }
+.native-calendar { display: flex; align-items: center; gap: 10px; border: 1px solid var(--native-line); padding: 12px; border-radius: 8px; margin-block: 16px; background: var(--native-header); }
+.native-calendar > svg { color: #3478da; width: 20px; flex-shrink: 0; }
+.dark .native-calendar > svg { color: #80b3ff; }
+.native-calendar strong { display: block; font-size: 11px; font-weight: 500; }
+.native-calendar span { display: block; font-size: 10px; color: var(--native-muted); margin-top: 2px; }
+.native-mail-signoff { color: var(--native-muted); font-size: 11px; }
+.native-mail-reply { border-top: 1px solid var(--native-line); padding-top: 16px; margin-top: 20px; }
+.native-mail-reply .native-avatar { width: 30px; height: 30px; font-size: 10px; }
+.native-mail-reply > p { font-size: 12px; margin: 12px 0 0 42px; }
+.native-mail-footer { display: flex; gap: 10px; padding: 0 20px 18px 62px; }
+.native-mail-footer > span { display: flex; align-items: center; gap: 7px; border: 1px solid var(--native-line); border-radius: 16px; padding: 6px 12px; font-size: 10px; color: var(--native-muted); }
+.native-mail-footer svg { width: 13px; height: 13px; }
+.pv-native-note { display: flex; align-items: flex-start; gap: 7px; color: var(--pv-muted); font-size: 11px; margin-top: 13px; }
+.pv-native-note > svg { color: var(--pv-accent); width: 15px; height: 15px; margin-top: 2px; flex-shrink: 0; }
+.pv-native-caption { font-size: 10px; color: var(--pv-muted); margin-bottom: 10px; }
+.pv-context-grid { grid-template-columns: minmax(0,.72fr) minmax(0,1.28fr); }
+.pv-channel-picks button[data-channel="iMessage"][aria-pressed="true"], .pv-channel-picks button[data-channel="Email"][aria-pressed="true"] { color: #2467c8; background: #edf5ff; border-color: #b1d0fa; }
+.pv-channel-picks button[data-channel="WhatsApp"][aria-pressed="true"], .pv-channel-picks button[data-channel="SMS"][aria-pressed="true"] { color: #16703e; background: #edfaf1; border-color: #a6dcba; }
+.dark .pv-channel-picks button[data-channel="iMessage"][aria-pressed="true"], .dark .pv-channel-picks button[data-channel="Email"][aria-pressed="true"] { color: #a3c8ff; background: #172a43; border-color: #3d638f; }
+.dark .pv-channel-picks button[data-channel="WhatsApp"][aria-pressed="true"], .dark .pv-channel-picks button[data-channel="SMS"][aria-pressed="true"] { color: #97dbb2; background: #163728; border-color: #3c7757; }
+@media (max-width: 767px) { .pv-context-grid { grid-template-columns: minmax(0,1fr); } }
+@media (max-width: 479px) {
+  .native-apple-header { padding-inline: 10px; }
+  .native-back > span { display: none; }
+  .native-message-body { padding-inline: 12px; }
+  .native-bubble { max-width: 92%; font-size: 12px; padding: 10px 12px; }
+  .native-wa-actions { gap: 9px; }
+  .native-wa-actions svg { width: 16px; }
+  .native-mail-content { padding: 16px 12px; }
+  .native-mail-copy, .native-mail-reply > p { margin-left: 0; }
+  .native-mail-subject { font-size: 15px; }
+  .native-mail-footer { padding-left: 12px; }
+}

@@ -1,0 +1,19 @@
+.feature-label { position: relative; isolation: isolate; overflow: hidden; }
+.feature-label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 50%;
+  background: linear-gradient(100deg, transparent 5%, rgb(255 255 255 / .85) 50%, transparent 95%);
+  transform: translateX(-210%) skewX(-15deg);
+  animation: feature-label-shine 5s ease-in-out infinite;
+}
+.dark .feature-label::before { background: linear-gradient(100deg, transparent 5%, rgb(167 186 255 / .13) 50%, transparent 95%); }
+@keyframes feature-label-shine {
+  0%, 15% { transform: translateX(-210%) skewX(-15deg); }
+  60%, 100% { transform: translateX(310%) skewX(-15deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .feature-label::before { animation: none; display: none; }
+}
